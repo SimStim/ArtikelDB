@@ -8,21 +8,17 @@ class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
-//	$this->app->bind('path.public', function() { return base_path('/var/www/king/public'); });
+        //
     }
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
-//	$this->app->bind('path.public', function() { return base_path('/var/www/king/public'); });
+        //
     }
 }
