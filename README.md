@@ -1,3 +1,36 @@
+# ArtikelDB
+
+A minimalist CRUD demo built with Laravel 13 (PHP 8.5+). It manages one kind of record — an "Artikel" with a name, a description and a price — stored in the `items` table. The entire user interface is in **German**.
+
+## How it works
+
+| Method | Path | Action |
+| --- | --- | --- |
+| `GET` | `/` | Landing page with a link to the article list |
+| `GET` | `/item` | List all articles, with view/edit/delete controls per row |
+| `GET` | `/item/create` | Form for a new article |
+| `POST` | `/item` | Validate and store, then redirect to the article |
+| `GET` | `/item/{item}` | Show one article |
+| `GET` | `/item/{item}/edit` | Pre-filled edit form |
+| `PUT`/`PATCH` | `/item/{item}` | Validate and update, then redirect to the article |
+| `DELETE` | `/item/{item}` | Delete and redirect to the list |
+
+The form fields are `name`, `desc` and `cost`; they are mapped to the `artikelname`, `beschreibung` and `preis` columns. Inputs are validated, state-changing forms are CSRF-protected, and descriptions are escaped when displayed. There is no login or authorization — everything is public by design.
+
+## Running locally
+
+```sh
+composer install
+cp .env.example .env   # if .env is not present
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
+
+The app uses SQLite (`database/database.sqlite`) and starts with an empty database. Open `http://localhost:8000`.
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
